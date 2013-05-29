@@ -4,12 +4,12 @@
  *
  * Written by Marius Stanciu - Sergiu <marius@picozu.com>
  * Licensed under the GPL Version 3 license.
- * Version 1.2.0
+ * Version 2.0.0
  *
  */
 
 ClassySocial = function(e) {
-    var n = e, s = "bubble", o = "arc", u = 0, a = 180, f = 80, l = 70, c = "none", h = "picture";
+    var n = e, s = "bubble", o = "arc", u = 0, a = 180, f = 80, l = 70, c = "none", h = "picture", y = "default";
     if ($(n).attr("data-networks")) {
         r = $(n).attr("data-networks").toLowerCase().split(",");
     }
@@ -33,6 +33,9 @@ ClassySocial = function(e) {
     }
     if ($(n).attr("data-image-type")) {
         h = $(n).attr("data-image-type").toLowerCase();
+    }
+    if ($(n).attr("data-theme")) {
+        y = $(n).attr("data-theme").toLowerCase();
     }
     var initialize = function() {
         $(n).addClass(s);
@@ -59,7 +62,7 @@ ClassySocial = function(e) {
     };
     var data = {
         bubble: {
-            holder: '<a class="main" title="Find Me Here" alt="Find Me Here">' + '<img src="[IMAGE_URL]" title="Find Me Here" alt="Find Me Here"/>' + "</a>" + '<div class="network_holder"></div>',
+            holder: '<a class="main" title="Find Me Here" alt="Find Me Here">' + '<img src="[IMAGE_URL]" title="Find Me Here" alt="Find Me Here"/>' + "</a>" + '<div class="network_holder ' + y + '"></div>',
             network_button: '<a class="network_button [NETWORK]" target="_blank" href="[URL]" data-network="[NETWORK]">[NAME]</a>',
             orientations: {
                 arc: function() {
@@ -206,6 +209,34 @@ ClassySocial = function(e) {
         github: {
             profile_url: "https://www.github.com/[HANDLE]",
             name: "GitHub"
+        },
+        blogger: {
+            profile_url: "http://www.blogger.com/profile/[HANDLE]",
+            name: "Blogger"
+        },
+        deviantart: {
+            profile_url: "https://[HANDLE].deviantart.com",
+            name: "DeviantArt"
+        },
+        flickr: {
+            profile_url: "http://www.flickr.com/photos/[HANDLE]",
+            name: "Flickr"
+        },
+        skype: {
+            profile_url: "skype:[HANDLE]?userinfo",
+            name: "Skype"
+        },
+        steam: {
+            profile_url: "http://steamcommunity.com/profiles/[HANDLE]",
+            name: "Steam"
+        },
+        wordpress: {
+            profile_url: "http://[HANDLE].wordpress.com",
+            name: "Wordpress"
+        },
+        yahoo: {
+            profile_url: "http://profile.yahoo.com/y/pulse/[HANDLE]",
+            name: "Yahoo"
         }
     };
     initialize();
