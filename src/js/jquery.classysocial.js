@@ -6,12 +6,12 @@
  * Licensed under the GPL Version 3 license.
  * Version 2.0.0
  *
- */
+ */ 
 
-ClassySocial = function(e) {
-    var n = e, s = "bubble", o = "arc", u = 0, a = 180, f = 80, l = 70, c = "none", h = "picture", y = "default";
+var ClassySocial = function(e) {
+    var n = e, s = "bubble", o = "arc", u = 0, a = 180, f = 80, l = 70, c = "none", h = "picture", y = "default", r;
     if ($(n).attr("data-networks")) {
-        r = $(n).attr("data-networks").toLowerCase().split(",");
+        r = $(n).attr("data-networks").toLowerCase().split(","); 
     }
     if ($(n).attr("data-orientation")) {
         o = $(n).attr("data-orientation").toLowerCase();
@@ -23,7 +23,7 @@ ClassySocial = function(e) {
         a = parseInt($(n).attr("data-arc-length"));
     }
     if ($(n).attr("data-radius")) {
-        f = parseInt($(n).attr("data-radius"));
+        f = parseInt($(n).attr("data-radius")); 
     }
     if ($(n).attr("data-gap")) {
         l = parseInt($(n).attr("data-gap"));
@@ -240,4 +240,5 @@ ClassySocial = function(e) {
         }
     };
     initialize();
-};
+}; 
+
